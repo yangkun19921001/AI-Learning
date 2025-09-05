@@ -1,0 +1,22 @@
+server:
+  name: "SSH-MCP-Server"
+  version: "1.0.0"
+  protocol_version: "2025-03-26"
+  port: 8000  # HTTP服务器端口（用于SSE传输）
+  timeout: 30s
+
+ssh:
+  default_user: "root"
+  default_port: 22
+  timeout: 30s
+  key_file: "~/.ssh/id_rsa"
+  known_hosts_file: ""  # 跳过主机密钥验证（仅用于测试）
+  max_connections: 10
+
+log:
+  level: "info"
+  file: "/tmp/ssh-mcp-server.log"
+  max_size: 100
+  max_backups: 3
+  max_age: 28
+  compress: true 
